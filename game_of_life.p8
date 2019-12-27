@@ -7,6 +7,7 @@ __lua__
 alive_color = 7
 width = 128
 height = 128
+iteration = 0
 
 prev_i = 1
 line_i = 2
@@ -38,6 +39,7 @@ function get_buffer(i, x)
 end
 
 while true do
+  iteration += 1
   flip()
 
   -- clear line buffer
@@ -72,10 +74,11 @@ while true do
         ((pget(x, y) == alive_color) and
         neighbors == alive_color * 2))
       then
-          pset(x, y, alive_color)
+        pset(x, y, alive_color)
       else
-          pset(x, y, 0)
+        pset(x, y, 0)
       end
+      print(iteration, 10, 10, 15)
     end
   end
 end
