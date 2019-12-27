@@ -58,15 +58,16 @@ while true do
 
     for x = 1, width do
       neighbors = (
-      get_buffer(prev_i, x-1) +
-      get_buffer(prev_i, x) +
-      get_buffer(prev_i, x+1) +
-      get_buffer(line_i, x-1) +
-      get_buffer(line_i, x+1) +
-      review_cell(x-1, y+1) +
-      review_cell(x, y+1) +
-      review_cell(x+1, y+1)
+        get_buffer(prev_i, x-1) +
+        get_buffer(prev_i, x) +
+        get_buffer(prev_i, x+1) +
+        get_buffer(line_i, x-1) +
+        get_buffer(line_i, x+1) +
+        review_cell(x-1, y+1) +
+        review_cell(x, y+1) +
+        review_cell(x+1, y+1)
       )
+
       if ((neighbors == alive_color * 3) or
         ((pget(x, y) == alive_color) and
         neighbors == alive_color * 2))
