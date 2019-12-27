@@ -21,6 +21,8 @@ for y = 1, height do
 end
 
 boards[1][60][64] = 1
+boards[1][60][65] = 1
+boards[1][61][63] = 1
 boards[1][61][64] = 1
 boards[1][62][64] = 1
 
