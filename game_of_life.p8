@@ -1,6 +1,8 @@
 pico-8 cartridge // http://www.pico-8.com
 version 18
 __lua__
+-- game of life
+-- by geopet (geoff petrie)
 
 alive_color = 7
 width = 128
@@ -57,8 +59,9 @@ while true do
         check_cell_location (board_i, x - 1, y) +
         check_cell_location (board_i, x + 1, y)
       )
-      if ((neighbors == 3) or ((boards[board_i][y][x]) == 1 and (neighbors == 2))) then
-        boards[other_i][y][x] = 1
+      if ((neighbors == 3) or
+         ((boards[board_i][y][x]) == 1 and (neighbors == 2))) then
+           boards[other_i][y][x] = 1
       else
         boards[other_i][y][x] = 0
       end
